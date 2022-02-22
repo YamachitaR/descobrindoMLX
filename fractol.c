@@ -6,12 +6,17 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 20:50:14 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/02/15 20:51:52 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/02/22 01:57:17 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "fractol.h"
 
-int main(void)
+int	main(int argc, char ** argv)
 {
-    
+	
+	if (check_arguments(argc, argv) == 0)
+		return (0);
+	
+	return (0);
 }

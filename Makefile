@@ -6,13 +6,13 @@
 #    By: ryoshio- <ryoshio-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/14 03:26:20 by ryoshio-          #+#    #+#              #
-#    Updated: 2022/02/15 20:49:57 by ryoshio-         ###   ########.fr        #
+#    Updated: 2022/02/22 02:02:14 by ryoshio-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME = exemplo
-SRC = fractol.c
+SRC = fractol.c check_arguments.c 
 
 teste:
 #   $(MAKE) -C minilibx-linux/
@@ -21,8 +21,9 @@ teste:
 
 
 fractol:
-	gcc $(SRC) minilibx-linux/libmlx.a -lXext -lX11 -lm -o exemplo
-	./exemplo
+	make -C libft
+	gcc $(SRC) libft/libft.a minilibx-linux/libmlx.a -lXext -lX11 -lm -o fractol
+	
 
 	
 	

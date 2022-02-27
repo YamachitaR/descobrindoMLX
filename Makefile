@@ -6,14 +6,14 @@
 #    By: ryoshio- <ryoshio-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/14 03:26:20 by ryoshio-          #+#    #+#              #
-#    Updated: 2022/02/22 02:02:14 by ryoshio-         ###   ########.fr        #
+#    Updated: 2022/02/27 07:17:09 by ryoshio-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME = exemplo
-SRC = fractol.c check_arguments.c 
-
+SRC = fractol.c check_arguments.c mandelbrot.c fractol.h colors.c
+CFLAG = -Wall -Werror -Wextra -fsanitize=address -g 
 teste:
 #   $(MAKE) -C minilibx-linux/
 	gcc $(arquivo) minilibx-linux/libmlx.a -lXext -lX11 -lm -o exemplo
@@ -22,7 +22,7 @@ teste:
 
 fractol:
 	make -C libft
-	gcc $(SRC) libft/libft.a minilibx-linux/libmlx.a -lXext -lX11 -lm -o fractol
+	gcc $(SRC) $(CFLAG)  libft/libft.a minilibx-linux/libmlx.a -lXext -lX11 -lm -o fractol
 	
 
 	

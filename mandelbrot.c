@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/26 22:46:27 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/02/27 07:52:58 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/03/05 22:21:11 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,16 @@ void    my_img_pixel_put(t_fractol *fractol, int x, int y, int color)
 {
 
 	char	*byte;
-
 	byte = fractol->img_addr + ((y * fractol->img_line_length)
-			+ (x *fractol->img_bits_per_pixel / 8));
+			+ (x *4));
 	*(unsigned int *)byte = color;
+
+// seria quase o mesmo de fazer esse 
+//fractol->img_addr[y * fractol->img_line_length + x*8] =color;
+                
 }
+
+
 
 static int set_mandelbrot(double x, double y)
 {

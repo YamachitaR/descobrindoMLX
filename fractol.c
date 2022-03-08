@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 20:50:14 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/02/27 07:32:58 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/03/08 06:49:54 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,12 @@ int	main(int argc, char ** argv)
 	{
 		beginning(fractol, argv);
 		choose(fractol);
-
+		
+		mlx_put_image_to_window(fractol->mlx, fractol->win, fractol->img, 0, 0);
+	    mlx_destroy_image(fractol->mlx, fractol->img);
 
 		mlx_loop(fractol-> mlx);
+
 		
 	}
 	return (0);
@@ -49,8 +52,14 @@ static void beginning (t_fractol *fractol, char **str)
 	
 	//retirar depois
 	fractol->color='k';
+	if(fractol->name[9]=='j')
+	{
+		    fractol->julia_x = atf(str[2]);
+    		fractol->julia_y= atf(str[3]);
+			//fractol->julia_x = -0.8;
+    		//fractol->julia_y= 0.5;
+	}
 
-	
 	fractol->img = mlx_new_image(fractol->mlx, IMG_X, IMG_Y);
 	fractol->img_addr = (char *)mlx_get_data_addr(fractol->img, &fractol->img_bits_per_pixel, &fractol->img_line_length, &fractol->img_endian);
 
@@ -59,6 +68,8 @@ static void beginning (t_fractol *fractol, char **str)
 
 static void choose (t_fractol *fractol)
 {
-	//if(fractol->name[9]=='m')
+	if(fractol->name[9]=='m')
 		mandelbrot(fractol);
+	if(fractol->name[9]=='j')
+		julia(fractol);
 }

@@ -6,14 +6,14 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 20:52:07 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/02/27 07:31:47 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/03/08 08:11:55 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #ifndef FRACTOL_H
 
-# define MAX_ITER 500
+# define MAX_ITER 50
 # define MIN_X -2
 # define MAX_X 2
 # define MIN_Y -2
@@ -51,8 +51,8 @@ typedef struct s_fractol
 int	check_arguments(int argc, char **argv);
 void    my_img_pixel_put(t_fractol *fractol, int x, int y, int color);
 void mandelbrot(t_fractol *fractol);
-
-
+double atf( char *str);
+void julia(t_fractol *fractol);
 
 //rafa
 

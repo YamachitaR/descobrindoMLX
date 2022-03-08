@@ -6,11 +6,14 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 03:42:15 by                   #+#    #+#             */
-/*   Updated: 2022/02/27 07:25:06 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/03/08 07:35:06 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
+
+
+int	color_rgb(int i);
 
 void	my_colors(int keycode, t_fractol *fractol)
 {
@@ -29,8 +32,10 @@ void	my_colors(int keycode, t_fractol *fractol)
 
 int	get_color(int i, t_fractol *fractol)
 {
+    
 	if (fractol->color == 'k')
 		return (i * 0x00ABCDEF);
+		//return (color_rgb(i));
 	else if (fractol->color == 'j')
 		return (i * 0x00FEDCBA);
 	else if (fractol->color == 'r')
@@ -40,4 +45,21 @@ int	get_color(int i, t_fractol *fractol)
 	else if (fractol->color == 'b')
 		return ((i * 256) + 100);
 	return (0);
+}
+
+int	color_rgb(int i)
+{
+	int	r;
+	int	g;
+	int	b;
+
+	
+	
+	r = (int)(9 * (1 - i) * pow(i, 3) * 255);
+	g = (int)(15 * pow((1 - i), 2) * pow(i, 2) * 255);
+	b = (int)(8.5 * pow((1 - i), 3) * i *255);
+	return (i << 24 | r << 16 | g << 8 | b);
+		
+		
+
 }

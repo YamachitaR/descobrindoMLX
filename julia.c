@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   mandelbrot.c                                       :+:      :+:    :+:   */
+/*   julia.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/26 22:46:27 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/03/08 07:47:11 by ryoshio-         ###   ########.fr       */
+/*   Created: 2022/03/05 22:22:10 by ryoshio-          #+#    #+#             */
+/*   Updated: 2022/03/08 08:11:04 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
-static int set_mandelbrot(double x, double y);
+static int set_julia(t_fractol *fractol, double x, double y);
 
-void mandelbrot(t_fractol *fractol)
+void julia(t_fractol *fractol)
 {
     double x;
     double y;
@@ -28,15 +28,12 @@ void mandelbrot(t_fractol *fractol)
             y = fractol->y_max - (fractol->y * ((fractol->y_max - fractol->y_min) / IMG_Y));
             
             //arruma ou da um jeito
-            my_img_pixel_put(fractol, fractol->x, fractol->y, get_color(set_mandelbrot(x,y), fractol));
+            my_img_pixel_put(fractol, fractol->x, fractol->y, get_color(set_julia(fractol, x,y), fractol));
             fractol->x++;
         }
-        
         fractol->x = 0;
-        fractol->y ++;
-        
+        fractol->y ++;   
     }
-
 }
 
 
@@ -44,7 +41,7 @@ void mandelbrot(t_fractol *fractol)
 
 
 
-static int set_mandelbrot(double x, double y)
+static int set_julia(t_fractol *fractol, double x, double y)
 {
     double xz;
     double yz;
@@ -54,19 +51,33 @@ static int set_mandelbrot(double x, double y)
     i = 1;
     xz = x;
     yz = y;
-    while((xz*xz +  yz*yz <=4 ) && (i < MAX_ITER))
+
+    while((xz*xz +yz*yz <=4 ) && (i < MAX_ITER))
     {
         i ++;
         temp = xz;
-        xz = (xz*xz) -(yz*yz) +x;
-		yz = (2 * temp * yz) + y;
+        xz = (xz*xz) -(yz*yz) + fractol->julia_x;
+		yz = (2 * temp * yz) + fractol->julia_y;
        
+        
+        
     }  
+
+/*
+  if(i==MAX_ITER)
+        return 0;
     
+    if (i != 1)
+        return (i-1);
+    return (1);
+
+    */
+ 
     if(i==MAX_ITER)
         return 0;
     
     return (i);
  
 }
+
 

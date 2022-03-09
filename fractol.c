@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 20:50:14 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/03/08 06:49:54 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/03/08 20:31:23 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ static void beginning (t_fractol *fractol, char **str)
 	{
 		    fractol->julia_x = atf(str[2]);
     		fractol->julia_y= atf(str[3]);
-			//fractol->julia_x = -0.8;
-    		//fractol->julia_y= 0.5;
+			//fractol->julia_x = -1.476;
+    		//fractol->julia_y= 0.0;
 	}
 
 	fractol->img = mlx_new_image(fractol->mlx, IMG_X, IMG_Y);

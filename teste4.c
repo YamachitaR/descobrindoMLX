@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 23:25:34 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/03/08 06:55:57 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/03/08 20:43:43 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ double atf(char *str)
     }
     
     atf=(float)ft_atoi(str);
-    if(atf)
+    if(str[0]!='-')
         atf+=(float)ft_atoi(ft_strchr(str, '.')+1)/base;
     else 
          atf-=(float)ft_atoi(ft_strchr(str, '.')+1)/base;
@@ -41,7 +41,7 @@ int main(void)
 {
    
     
-     printf("%f\n", atf("-0.5"));
+     printf("%f\n", atf("-0.476"));
 
      
     return (0);

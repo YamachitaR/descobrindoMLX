@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 03:49:32 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/03/09 02:38:52 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/03/09 06:21:36 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void    my_img_pixel_put(t_fractol *fractol, int x, int y, int color)
 	*(unsigned int *)byte = color;
 
 // seria quase o mesmo de fazer esse 
-//fractol->img_addr[y * fractol->img_line_length + x*8] =color;
+//fractol->img_addr[y * fractol->img_line_length + x*4] =color;
                 
 }
 
@@ -49,13 +49,4 @@ double atf(char *str)
     return (atf);  
 }
 
-int close_program(t_fractol *fractol)
-{
-    	
-        mlx_destroy_image(fractol->mlx, fractol->img);
-        mlx_destroy_window(fractol->mlx, fractol->win);
-        mlx_destroy_display(fractol->mlx);
-		free (fractol->mlx);
-        exit(0);
-        return (0);
-}
+

@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/08 22:42:09 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/03/09 01:42:02 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/03/09 05:09:27 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,9 @@ Que faz essa magia é o mlx_hook
 
 2 significa ao clicar( 	KeyPress), para ver outra opções clic na tabela x11events https://harm-smits.github.io/42docs/libs/minilibx/events.html
 1L<<0 significa KeyPressMask (acho que depois de clicar)
-close seria a função mensionando la em cima 
+close seria a função mensionando la em cima, 
+quem faz fecha mesmo é mlx_destroy_window
+Variavel keycode descofio que seja variavel global 
+esse numero 65307 significa "esc"
+
 */

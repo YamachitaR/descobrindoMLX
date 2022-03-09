@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 20:50:14 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/03/09 02:43:36 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/03/09 05:07:02 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int	main(int argc, char ** argv)
 		mlx_put_image_to_window(fractol->mlx, fractol->win, fractol->img, 0, 0);
 	  
 		mlx_hook(fractol->win, 17, 1L<<0, &close_program, fractol);
+		
 		mlx_loop(fractol-> mlx);
 	}
 	return (0);

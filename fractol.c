@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 20:50:14 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/03/08 20:31:23 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/03/09 02:43:36 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,18 @@ static void choose (t_fractol *fractol);
 int	main(int argc, char ** argv)
 {
 	t_fractol	*fractol;
-	fractol = (t_fractol *)malloc(sizeof (t_fractol));
+	
 
 	if (check_arguments(argc, argv) == 1)
 	{
+		fractol = (t_fractol *)malloc(sizeof (t_fractol));
 		beginning(fractol, argv);
 		choose(fractol);
 		
 		mlx_put_image_to_window(fractol->mlx, fractol->win, fractol->img, 0, 0);
-	    mlx_destroy_image(fractol->mlx, fractol->img);
-
+	  
+		mlx_hook(fractol->win, 17, 1L<<0, &close_program, fractol);
 		mlx_loop(fractol-> mlx);
-
-		
 	}
 	return (0);
 }

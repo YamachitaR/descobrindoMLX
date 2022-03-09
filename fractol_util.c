@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 03:49:32 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/03/08 20:45:07 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/03/09 02:38:52 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,15 @@ double atf(char *str)
     else 
          atf-= (float)ft_atoi(ft_strchr(str, '.')+1)/base;
     return (atf);  
+}
+
+int close_program(t_fractol *fractol)
+{
+    	
+        mlx_destroy_image(fractol->mlx, fractol->img);
+        mlx_destroy_window(fractol->mlx, fractol->win);
+        mlx_destroy_display(fractol->mlx);
+		free (fractol->mlx);
+        exit(0);
+        return (0);
 }

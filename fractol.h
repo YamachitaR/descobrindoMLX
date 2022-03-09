@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/15 20:52:07 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/03/08 22:12:13 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/03/09 02:31:05 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,7 @@ void    my_img_pixel_put(t_fractol *fractol, int x, int y, int color);
 void mandelbrot(t_fractol *fractol);
 double atf( char *str);
 void julia(t_fractol *fractol);
-
-//rafa
-
+int close_program(t_fractol *fractol);
 void	my_colors(int keycode, t_fractol *fractol);
 int	get_color(int i, t_fractol *s_fractol);
 #endif

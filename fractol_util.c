@@ -6,7 +6,7 @@
 /*   By: ryoshio- <ryoshio-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 03:49:32 by ryoshio-          #+#    #+#             */
-/*   Updated: 2022/03/09 06:21:36 by ryoshio-         ###   ########.fr       */
+/*   Updated: 2022/03/10 07:53:56 by ryoshio-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ double atf(char *str)
     }
     
     atf=(float)ft_atoi(str);
+    if(!ft_atoi(ft_strchr(str, '.')))
+        return ((float)atf);
     if(str[0]!='-')
         atf+=(float)ft_atoi(ft_strchr(str, '.')+1)/base;
     else 

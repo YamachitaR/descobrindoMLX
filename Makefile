@@ -6,14 +6,14 @@
 #    By: ryoshio- <ryoshio-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/02/14 03:26:20 by ryoshio-          #+#    #+#              #
-#    Updated: 2022/03/09 05:06:33 by ryoshio-         ###   ########.fr        #
+#    Updated: 2022/03/10 15:42:15 by ryoshio-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME = exemplo
 SRC = fractol.c check_arguments.c mandelbrot.c fractol.h colors.c julia.c fractol_util.c hook.c
-CFLAG = -Wall -Werror -Wextra -fsanitize=address -g 
+CFLAG = -Wall -Werror -Wextra  -g 
 teste:
 #   $(MAKE) -C minilibx-linux/
 	gcc $(arquivo) minilibx-linux/libmlx.a -lXext -lX11 -lm -o exemplo
